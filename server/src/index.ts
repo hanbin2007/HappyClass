@@ -61,4 +61,8 @@ function serializeAgg(id: string) {
   };
 }
 
-server.listen(5174, () => console.log('Server on http://localhost:5174'));
+if (process.env.NODE_ENV !== 'test') {
+  server.listen(5174, () => console.log('Server on http://localhost:5174'));
+}
+
+export { app, server };
